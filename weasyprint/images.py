@@ -224,8 +224,8 @@ def get_image_from_uri(cache, url_fetcher, url, forced_mime_type=None):
                                 pixbuf.decode_to_image_surface(string))
                         except pixbuf.ImageLoadingError as exception:
                             raise ImageLoadingError(str(exception))
-                        if format_name == 'jpeg':
-                            surface.set_mime_data('image/jpeg', string)
+                    #     if format_name == 'jpeg':
+                    #         surface.set_mime_data('image/jpeg', string)
                         image = RasterImage(surface)
     except (URLFetchingError, ImageLoadingError) as exc:
         LOGGER.error('Failed to load image at "%s" (%s)', url, exc)
